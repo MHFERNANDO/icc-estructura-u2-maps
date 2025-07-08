@@ -27,6 +27,8 @@ java App
 
 
 ---
+![image](https://github.com/user-attachments/assets/63fe4130-8bbc-4cdd-b5eb-3956e8cb0990)
+
 
 ## 🧑‍💻 Ejemplo de Entrada
 
