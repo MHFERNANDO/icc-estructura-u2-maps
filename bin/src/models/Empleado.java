@@ -1,7 +1,5 @@
 package models;
 
-import java.util.Objects;
-
 public class Empleado implements Comparable<Empleado> {
     private int id;
     private String name;
@@ -11,9 +9,6 @@ public class Empleado implements Comparable<Empleado> {
         this.id = id;
         this.name = name;
         this.position = position;
-    }
-    public Empleado(int id) {
-        this.id = id;
     }
 
     public int getId() {
@@ -39,15 +34,21 @@ public class Empleado implements Comparable<Empleado> {
         if (obj == null || getClass() != obj.getClass()) return false;
         Empleado other = (Empleado) obj;
         if (id != other.id) return false;
+        if (name == null) {
+            if (other.name != null) return false;
+        } else if (!name.equals(other.name)) return false;
         return true;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + id;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((position == null) ? 0 : position.hashCode());
+        return result;
     }
-
-
 
     @Override
     public int compareTo(Empleado arg0) {
